@@ -1,5 +1,7 @@
+// apiKey (shouldn't be public but it's a personal project)
 const apiKey = '5218ad67eae2f3032e46dce70a325b70';
 
+// Variables
 const weather = document.getElementsByClassName('weather')[0];
 const search = document.getElementsByClassName('search')[0];
 const notFound = document.getElementsByClassName('notFound')[0];
@@ -13,6 +15,7 @@ const temp = document.getElementById('temp');
 const condition = document.getElementById('condition');
 const humidity = document.getElementById('humidity');
 const wind = document.getElementById('wind');
+const image = document.getElementById('image');
 
 // Main function that controls the weatherApp
 async function answer() {
@@ -22,12 +25,18 @@ async function answer() {
     forecastInfo = await seeData('forecast', city, apiKey);
     exists = checkDisplay(weatherInfo.cod);
 
+    // If the place exists, then shows info
     if (exists == true) {
         place.innerHTML = weatherInfo.name;
         temp.innerHTML = `${Math.round(weatherInfo.main.temp)}° C`;
         humidity.innerHTML = `${weatherInfo.main.humidity}%`;
         wind.innerHTML = `${Math.round(weatherInfo.wind.speed)} m/s`;
+        checkImage(weatherInfo.weather[0].id);
         console.log(weatherInfo);
+        
+        let realDate = new Date(weatherInfo.dt * 1000);
+        realDate = realDate.toLocaleDateString("es-ES", {weekday: "short", day: "numeric", month: "short"});
+        date.innerHTML = realDate;
     }
 }
 
@@ -57,6 +66,25 @@ function checkDisplay(cod) {
         notFound.style.display = 'none';
         existingPlace = true;
         return existingPlace;
+    }
+}
+
+// Checks what image (weather state) should the web show
+function checkImage(id) {
+    if (id >= 200 && id <= 232) {
+        image.src = "./assets/weather/thunderstorm.svg";
+    } else if (id >= 300 && id <= 321) {
+        image.src = "./assets/weather/drizzle.svg";
+    } else if (id >= 500 && id <= 531) { 
+        image.src = "./assets/weather/rain.svg";
+    } else if (id >= 600 && id <= 622) {
+        image.src = "./assets/weather/snow.svg";
+    } else if (id >= 700 && id <= 781) { 
+        image.src = "./assets/weather/atmosphere.svg";
+    } else if (id === 800) {
+        image.src = "./assets/weather/clear.svg";
+    } else {
+        image.src = "./assets/weather/clouds.svg";
     }
 }
 
