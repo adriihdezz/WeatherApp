@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <form class="prompt">
-            <input id="input" type="text" placeholder="Busca tu ciudad...">
+            <input id="input" type="text" placeholder="Find your city...">
             <button id="btnSearch"><img src="./assets/eye.svg"></button>
         </form>
         
@@ -17,18 +17,18 @@
             <div class="weather" style="display: none;">
                 <div class="place">
                     <img src="./assets/location.svg">
-                    <h1 id="name">Tokyo</h1>
+                    <h1 id="name"></h1>
                 </div>
 
                 <div class="date">
-                    <h4 id="date">Wed, 17 Aug</h4>
+                    <h4 id="date"></h4>
                 </div>
 
                 <div class="temperatureBox">
                     <img id="image" src="./assets/weather/rain.svg">
                     <div class="temperature">
-                        <h1 id="temp">29° C</h1>
-                        <h4 id="condition">Rain</h4>
+                        <h1 id="temp"></h1>
+                        <h4 id="description"></h4>
                     </div>
                 </div>
 
@@ -36,14 +36,14 @@
                     <div class="humidity">
                         <img src="./assets/drop.svg" class="icon">
                         <div class="text">
-                            <h5><span class="bold">Humedad</span></h5>
-                            <h5 id="humidity">55%</h5>
+                            <h5><span class="bold">Humidity</span></h5>
+                            <h5 id="humidity"></h5>
                         </div>
                     </div>
                     <div class="wind">
                         <div class="text">
-                            <h5><span class="bold">Viento</span></h5>
-                            <h5 id="wind">23 m/s</h5>
+                            <h5><span class="bold">Wind</span></h5>
+                            <h5 id="wind"></h5>
                         </div>
                         <img src="./assets/wind.svg" class="icon">
                     </div>
@@ -53,67 +53,21 @@
             <div class="search">
                 <img src="./assets/message/search-city.png">
                 <div class="text">
-                    <h1>Busca una Ciudad</h1>
-                    <h4>¿Qúe clima hace en tu ciudad?</h4>
+                    <h1>Find your city</h1>
+                    <h4>What awaits you today?</h4>
                 </div>
             </div>
 
             <div class="notFound" style="display: none;">
                 <img src="./assets/message/not-found.png">
                 <div class="text">
-                    <h1>No encontrado</h1>
-                    <h4>Lo siento, no hemos encontrado tu ciudad</h4>
+                    <h1>Not found</h1>
+                    <h4>Sorry, we haven't found your city</h4>
                 </div>  
             </div>
         </div>
 
-        <div class="forecast">
-            <div class="forecastItem">
-                <h4>05 Aug</h4>
-                <img src="./assets/weather/clouds.svg">
-                <h5>29° C</h5>
-            </div>
-            <div class="forecastItem">
-                <h4>05 Aug</h4>
-                <img src="./assets/weather/clouds.svg">
-                <h5>29° C</h5>
-            </div>
-            <div class="forecastItem">
-                <h4>05 Aug</h4>
-                <img src="./assets/weather/clouds.svg">
-                <h5>29° C</h5>
-            </div>
-            <div class="forecastItem">
-                <h4>05 Aug</h4>
-                <img src="./assets/weather/clouds.svg">
-                <h5>29° C</h5>
-            </div>
-            <div class="forecastItem">
-                <h4>05 Aug</h4>
-                <img src="./assets/weather/clouds.svg">
-                <h5>29° C</h5>
-            </div>
-            <div class="forecastItem">
-                <h4>05 Aug</h4>
-                <img src="./assets/weather/clouds.svg">
-                <h5>29° C</h5>
-            </div>
-            <div class="forecastItem">
-                <h4>05 Aug</h4>
-                <img src="./assets/weather/clouds.svg">
-                <h5>29° C</h5>
-            </div>
-            <div class="forecastItem">
-                <h4>05 Aug</h4>
-                <img src="./assets/weather/clouds.svg">
-                <h5>29° C</h5>
-            </div>
-            <div class="forecastItem">
-                <h4>05 Aug</h4>
-                <img src="./assets/weather/clouds.svg">
-                <h5>29° C</h5>
-            </div>
-        </div>
+        <div class="forecast" style="display: none;"></div>
     </div>
 
     <script src="script.js"></script>
